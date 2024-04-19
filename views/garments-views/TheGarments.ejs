@@ -1,0 +1,94 @@
+<section
+  class="relative overflow-y-hidden bg-[url('/img/stacked-steps-haikei.svg')] bg-cover bg-center bg-no-repeat min-h-screen z-[1] after:backdrop-brightness-75 after:backdrop-blur-[3px] after:z-[-1] after:content-[''] after:inset-0 after:absolute"
+>
+  <!-- Container -->
+  <div class="mx-auto w-10/12 px-[7%] py-10">
+    <h1 class="text-5xl font-semibold text-slate-200">Garments Index</h1>
+    <div class="mx-auto mb-4 mt-8 flex items-center justify-end">
+      <!-- ini buat toolbar ama tag -->
+      <div class="relative inline-flex space-x-4 justify-end">
+        <button class="size-10 rounded-lg bg-slate-200" id="search-button">
+          <i class="bi bi-search cursor-pointer"></i>
+        </button>
+        <div
+          class="absolute -left-[15rem] bottom-0 top-0 w-[13rem] origin-right scale-x-0 rounded-lg bg-slate-200 opacity-0 transition-all"
+          id="search-box"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            class="bg-transparent px-4 py-[0.6rem] text-sm focus:outline-none"
+          />
+          <button type="button" onclick="search()">
+            <i class="bi bi-search absolute right-3 top-[0.5rem]"></i>
+          </button>
+        </div>
+        <button class="size-10 rounded-lg bg-slate-200">
+          <i class="bi bi-funnel"></i>
+        </button>
+        <button class="size-10 rounded-lg bg-slate-200">
+          <i class="bi bi-filter"></i>
+        </button>
+      </div>
+    </div>
+    <!-- ini buat au apaan -->
+    <div
+      class="custom-scrollbar border-2 border-slate-500/50 shadow-md shadow-[#9290c372] mx-auto h-[60vh] max-h-[60vh] space-y-4 overflow-y-auto rounded-lg bg-bgGarment px-[3%] py-10"
+    >
+      <% if (!garments.length) { %>
+      <h1 class="text-xl text-center font-semibold text-slate-950">
+        There is no garment yet.
+      </h1>
+      <% } else { %>
+      <% garments.forEach(garment => { %>
+      <div
+        class="mx-auto flex w-[90%] items-center justify-between rounded-sm bg-zinc-100 px-10 py-4 shadow-md shadow-[#9290c372]"
+      >
+        <a
+          href="#"
+          class="text-lg font-semibold tracking-wider hover:text-violet-500"
+        >
+          <%= garment.name %>
+        </a>
+        <form
+          action="/garments/delete/<%= garment._id %>?_method=DELETE"
+          method="POST"
+        >
+          <div
+            class="flex overflow-hidden rounded-md font-semibold text-slate-900 last:mr-0"
+          >
+            <a
+              href="/garments/edit/<%= garment._id %>"
+              class="bg-green-500 px-4 py-2 text-white tracking-wide hover:bg-green-600"
+            >
+              EDIT
+            </a>
+            <button
+              type="button"
+              class="bg-red-600 px-4 py-2 tracking-wide text-white mix-blend-darken hover:bg-red-700"
+              onclick="deleteConfirmation(this)"
+            >
+              DELETE
+            </button>
+          </div>
+        </form>
+      </div>
+      <% }); %>
+
+      <% } %>
+    </div>
+
+    <!-- ini buat footer -->
+    <div class="flex items-center justify-between">
+      <p class="mt-4 text-sm tracking-wider text-slate-300">
+        Total item: <%= garments.length %>
+      </p>
+      <a
+        href="/garments/create"
+        class="mr-10 mt-4 rounded-lg bg-blue-700 px-4 py-2 font-semibold tracking-wide text-slate-200 shadow-[0_0_10px_1px_rgba(111,151,252,50)] hover:bg-blue-500"
+      >
+        CREATE NEW
+      </a>
+    </div>
+  </div>
+</section>

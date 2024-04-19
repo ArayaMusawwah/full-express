@@ -1,0 +1,209 @@
+<section
+  class="grid min-h-screen place-items-center bg-gradient-to-tl from-[#2a0845] to-[#6441A5] px-[5%] selection:bg-violet-600 selection:text-white"
+>
+  <!-- flashhhhh -->
+  <% if (flashMessage.length) { %>
+  <div
+    class="bg-red-500 rounded-md py-2 px-4 z-50 inline-block absolute top-10 right-1/2 translate-x-1/2"
+    id="flash-card"
+  >
+    <p class="text-white font-semibold"><%= flashMessage %></p>
+  </div>
+  <% } %>
+
+  <div
+    class="container relative flex min-h-[480px] min-w-[425px] max-w-[768px] items-center overflow-hidden rounded-3xl bg-slate-300 font-montserrat"
+    id="container"
+  >
+    <!-- register -->
+    <div
+      class="absolute h-full w-1/2 tracking-wide opacity-0 transition-all duration-700"
+      id="register"
+    >
+      <form
+        action="/register"
+        method="POST"
+        class="flex h-full flex-col items-center justify-center space-y-4 py-10"
+      >
+        <h3 class="text-3xl font-semibold text-gray-950">Create Account</h3>
+        <div class="space-x-1">
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-google-plus-g"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+        <span class="text-xs text-gray-800"
+          >or use your email for registeration</span
+        >
+        <input
+          type="text"
+          placeholder="Your Name"
+          name="username"
+          id="username"
+          required
+          autocomplete="off"
+          class="w-4/5 rounded-lg bg-white px-6 py-2 text-sm focus:outline-none focus:invalid:text-black"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="register-email"
+          required
+          autocomplete="off"
+          class="w-4/5 rounded-lg bg-white px-6 py-2 text-sm focus:outline-none focus:invalid:text-black"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="register-password"
+          required
+          autocomplete="off"
+          class="w-4/5 rounded-lg bg-white px-6 py-2 text-sm focus:outline-none focus:invalid:text-black"
+        />
+
+        <button
+          type="submit"
+          class="mt-6 w-2/3 rounded-lg bg-blue-500 px-6 py-2 text-sm font-semibold text-white shadow-md shadow-sky-500/50 hover:bg-blue-600"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+
+    <!-- sign in -->
+    <div
+      class="absolute h-full w-1/2 tracking-wide transition-all duration-700"
+      id="signin"
+    >
+      <form
+        action="/login"
+        method="POST"
+        class="flex h-full flex-col items-center justify-center space-y-4 py-10"
+      >
+        <h3 class="text-3xl font-semibold text-gray-950">Sign In</h3>
+        <div class="space-x-1">
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-google-plus-g"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="#"
+            class="inline-flex size-8 items-center justify-center rounded-md border border-gray-500/70 hover:bg-gray-500"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </div>
+        <span class="text-xs text-gray-800">or use email password</span>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          id="login-name"
+          required
+          class="w-4/5 rounded-lg bg-white px-6 py-2 text-sm"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="login-password"
+          required
+          class="w-4/5 rounded-lg bg-white px-6 py-2 text-sm"
+        />
+        <span class="text-xs font-light italic"
+          ><a href="#_">forget your password?</a></span
+        >
+        <button
+          type="submit"
+          class="mt-6 w-2/3 rounded-lg bg-teal-500 px-6 py-2 text-sm font-semibold shadow-md shadow-cyan-500/50 hover:bg-teal-400"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+
+    <!-- foreground???-->
+    <div
+      class="absolute left-1/2 right-0 h-full w-1/2 overflow-hidden rounded-[125px_0_0_100px] transition-all duration-700"
+      id="foreground"
+    >
+      <div
+        class="absolute inset-0 w-[200%] bg-gradient-to-r from-teal-500 to-sky-500 transition duration-700"
+        id="toggle-foreground"
+      ></div>
+    </div>
+
+    <!-- sign in panel -->
+    <div
+      class="absolute right-0 flex h-full w-1/2 flex-col justify-center transition-all duration-700"
+      id="signin-panel"
+    >
+      <h4
+        class="text-center text-4xl font-bold text-white [text-shadow:0_2px_5px_rgb(0,0,0,70)]"
+      >
+        Welcome back!
+      </h4>
+      <p
+        class="my-8 text-pretty px-8 text-center text-sm font-medium text-white [text-shadow:1px_1px_5px_rgb(0,0,0)]"
+      >
+        Don't have an account? Register with your personal details to use all of
+        site features
+      </p>
+      <button
+        class="btn-trigger mx-auto w-2/3 rounded-lg px-6 py-2 text-sm font-semibold text-white border transition-all border-white hover:shadow-[0_2px_10px_4px_rgb(226,232,240,10)] hover:bg-slate-100 hover:text-black"
+      >
+        Register
+      </button>
+    </div>
+
+    <!-- register panel -->
+    <div
+      class="absolute -left-1/2 flex h-full w-1/2 flex-col justify-center transition-all duration-700"
+      id="register-panel"
+    >
+      <h4
+        class="text-center text-4xl font-bold text-white [text-shadow:0_2px_5px_rgb(0,0,0,70)]"
+      >
+        Hello Patrons
+      </h4>
+      <p
+        class="my-8 text-pretty px-8 text-center text-sm font-medium text-white [text-shadow:1px_1px_5px_rgb(0,0,0)]"
+      >
+        Enter your personal details to use all of site features
+      </p>
+      <button
+        class="btn-trigger mx-auto mt-6 w-2/3 rounded-lg px-6 py-2 text-sm font-semibold text-white border border-white transition-all hover:shadow-[0_2px_10px_4px_rgb(226,232,240,10)] hover:bg-slate-100 hover:text-black"
+      >
+        Sign In
+      </button>
+    </div>
+  </div>
+</section>

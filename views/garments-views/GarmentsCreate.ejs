@@ -1,0 +1,91 @@
+<section
+  class="overflow-y-hidden bg-[url('/img/stacked-steps-haikei.svg')] bg-cover bg-center bg-no-repeat"
+>
+  <div class="relative h-screen w-full backdrop-blur-[6px]">
+    <a
+      href="/garments"
+      class="group absolute left-28 top-24 block transition-all"
+    >
+      <i class="bi bi-arrow-left-circle text-5xl text-slate-200"></i>
+      <span
+        class="absolute -bottom-12 right-1/2 w-32 origin-top -translate-y-10 translate-x-1/2 scale-x-0 scale-y-0 rounded-lg border-2 border-slate-200/60 bg-slate-700 text-center text-slate-200 transition-all group-hover:translate-y-0 group-hover:scale-x-100 group-hover:scale-y-100"
+        >Back to Index</span
+      >
+    </a>
+    <div class="mx-auto w-10/12 px-[7%] py-10">
+      <h1 class="mb-6 text-3xl font-semibold text-slate-200">
+        Create new product
+      </h1>
+
+      <!-- ini buat au apaan -->
+      <form action="/garments" method="POST">
+        <div
+          class="custom-scrollbar mx-auto h-[80vh] max-h-[80vh] space-y-4 overflow-y-auto rounded-lg bg-bgGarment px-[3%] py-10"
+        >
+          <!-- ini buat form inputan -->
+          <div
+            class="mx-auto flex w-[90%] items-center justify-between overflow-hidden rounded-lg border-2 border-gray-700 bg-zinc-100"
+          >
+            <label
+              for="name"
+              class="h-full w-28 bg-gray-700 px-4 py-2 font-semibold text-white"
+              >Name</label
+            >
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name of product"
+              class="w-full bg-transparent px-4 py-1 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div
+            class="mx-auto flex w-[90%] items-center justify-between overflow-hidden rounded-lg border-2 border-gray-700 bg-zinc-100"
+          >
+            <label
+              for="location"
+              class="h-full w-28 bg-gray-700 px-4 py-2 font-semibold text-white"
+              >Location</label
+            >
+            <input
+              type="text"
+              name="location"
+              id="location"
+              required
+              placeholder="location of product"
+              class="w-full bg-transparent px-4 py-1 focus:outline-none"
+            />
+          </div>
+
+          <div
+            class="mx-auto flex w-[90%] items-center justify-between overflow-hidden rounded-lg border-2 border-gray-700 bg-zinc-100"
+          >
+            <label
+              for="contact"
+              class="h-full w-28 bg-gray-700 px-4 py-2 font-semibold text-white"
+              >Contact</label
+            >
+            <input
+              type="text"
+              name="contact"
+              min="0"
+              id="contact"
+              placeholder="contact of product"
+              class="w-full bg-transparent px-4 py-1 focus:outline-none"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="mx-auto mt-20 block w-1/3 rounded-lg border border-sky-950 bg-blue-600 px-4 py-2 font-semibold tracking-wider text-slate-200 shadow-md shadow-sky-600/70 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none"
+          >
+            SUBMIT
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

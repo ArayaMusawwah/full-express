@@ -1,0 +1,33 @@
+<section
+  class="overflow-y-hidden bg-[url('/img/Polygon_Luminary.svg')] bg-cover bg-center bg-no-repeat"
+>
+  <div class="relative min-h-screen w-full backdrop-blur-[3px]">
+    <a
+      href="/products"
+      class="group absolute left-28 top-28 block transition-all"
+    >
+      <i class="bi bi-arrow-left-circle text-5xl text-slate-200"></i>
+      <span
+        class="absolute -bottom-12 right-1/2 w-32 origin-top -translate-y-10 translate-x-1/2 scale-x-0 scale-y-0 rounded-lg border-2 border-slate-200/60 bg-slate-700 text-center text-slate-200 transition-all group-hover:translate-y-0 group-hover:scale-x-100 group-hover:scale-y-100"
+        >Back to Index</span
+      >
+    </a>
+    <div class="mx-auto w-10/12 px-[7%] py-10">
+      <h2 class="text-3xl font-semibold text-slate-200">Product Details</h2>
+
+      <!-- ini buat itu -->
+      <div
+        class="mx-auto mb-4 mt-8 flex items-center justify-between rounded-lg bg-slate-50/30 px-8 py-10 text-white backdrop-blur-sm *:block"
+      >
+        <div><%= product.name %></div>
+        <div><%= product.brand %></div>
+        <div><%= product.price %></div>
+        <div><%= product.stock %></div>
+        <div><%= product.size %></div>
+        <div><%= product.category %></div>
+        <div><%= product.description %></div>
+        <div><%= product.garment.name %></div>
+      </div>
+    </div>
+  </div>
+</section>
